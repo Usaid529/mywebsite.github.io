@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+body{
+    font-family: 'Prompt', sans-serif;
+    background-image: url(./luxury-abstract-red-dark-background-template-design_144648-214.webp);   
+}
+
+.btn{
+    margin: 5px;
+}
+.nav li a:hover{
+    color: white;
+    background-color: orange;
+}
+.nav li a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.nav{
+    float:right ;
+}
+header{
+    background-image: url(./luxury-abstract-red-dark-background-template-design_144648-214.webp); 
+}
+.dropdown-menu li a{
+    color: black;
+}
+.marketing{
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.marketing h1{
+    color: #fff;
+}
+.fd h2,p{
+    color: #fff;
+}
+.blogs{
+    justify-content: center;
+    text-align: center;
+  
+}
+.blogs h1{
+    color: white;
+
+}
+.col-md-3{
+    margin: 5px;
+}
+.blogs-1{
+    margin-top: 20px;
+}
+.hollywood{
+    margin-top: 200px;
+    justify-content: center;
+}
+.hollywood h1{
+    text-align: center;
+   
+}
+.holl{
+    margin-top: 80px;
+    margin: 5px;
+}
+.card-title{
+    color:rgb(158, 61, 61);
+          
+}
+.hollywood h1{
+    color: #fff;
+}
+.bollywood h1{
+    color: #fff;
+}
+.card-text{
+    color: rgb(7, 7, 7);
+}
+.list-group-item{
+    color: blue;
+}
+.bollywood h1{
+text-align: center;
+}
+.bollywood{
+    margin-top: 90px;
+}
+.prices{
+    margin-top: 220px;
+}
+.prices h1{
+    text-align: center;
+}
+.BBB{
+    margin-top: 190px;
+    background-color: rgb(160, 12, 12);
+}
+.BBB h2{
+    text-align: center;
+}
+.fom input ,.input-large span2 {
+   margin: 10px;
+   width: 340px;
+   padding: 10px 15px;
+}
+
+.btnnn{
+    text-align: center;
+    margin-top: 20px;
+}
+.fott{
+    margin-top: 190px;
+    background-color: rgb(146, 9, 9);
+}
+.fa{
+    width: 30px;
+    height: 35px;
+    padding-top: 4px;
+    text-align: center;
+    line-height: 20px;
+    background-color: rgb(10, 10, 10);
+    border-radius: 30px;
+}
+
+.ff{
+    display: inline;
+}
+.fa:hover{
+    color: #fff;
+    background-color: orange;
+}
+
+.prices h1{
+    color: #fff;
+}
+.card-body h1{
+    color: black;
+}
+.fom label{
+    color: wheat;
+}
+h5{
+    color: wheat;
+}
+.col-lg-5 ul li:hover{
+    background-color: orange;
+}
+.btn-warning a{
+    list-style-type: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.btn-danger a{
+    list-style-type: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.modal-body p{
+    color: black;
+}

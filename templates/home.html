@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CINEPLEX CINEMA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Prompt:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Prompt:wght@500&family=Roboto+Slab:wght@300&family=Tiro+Devanagari+Marathi&display=swap');
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row py-2">
+
+                <div class="col-md">
+                    <div class="logo">
+                        <img src="" alt="">
+                        <!-- <h1>CINEPLEX CINEMA</h1> -->
+                    </div>
+                    <nav class="nav  nav-pills ">
+                        <li class="nav-item"><a href="#top" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#top" class="nav-link">About</a> </li>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                SERVICES
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="">2D Action</a></li>
+                                <li><a class="dropdown-item" href="#">3D Action</a></li>
+                                <li><a class="dropdown-item" href="#">4D Action</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                MOVIES
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">BOLLYWOOD</a></li>
+                                <li><a class="dropdown-item" href="#">LOLLYWOOD</a></li>
+                                <li><a class="dropdown-item" href="#">TOLLYWOOD</a></li>
+                            </ul>
+                        </div>
+
+
+                        <li class="nav-item"><a href="#portfolio" class="nav-link">Cinema</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                        <input type="button" onClick="document.getElementById('middle').scrollIntoView();" />
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal"> BOOK NOW </button>
+                        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                        <!-- <button type="button" class="btn btn-danger class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#signupModal">LOGIN</button> -->
+                    </nav>
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="signupModalLabel">LOGIN form</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
+                                            <div id="emailHelp" class="form-text">We'll never share your email with
+                                                anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="booknowModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="booknowModalLabel">BOOKING form</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">NAME</label>
+                                            <input type="NAME" class="form-control" id="exampleInputEmail1"
+                                                aria-describedby="emailHelp">
+                                            <div id="emailHelp" class="form-text">We'll never share your email with
+                                                anyone else.</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">DATE</label>
+                                            <input type="DD/MM/YY" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                        </div>
+
+
+                                        <div class="col-md-6 ">
+                                            <div class="input-block-level">
+                                                <div class="input-large span2 ">Type:</div>
+                                                <select name="type" class="input-prepend" id="type" style="width:80%">
+                                                    <option value="">Select Type</option>
+                                                    <option value="complain">2D</option>
+                                                    <option value="Feedback">3D</option>
+                                                    <option value="GInquiry"> 4D</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Time slot</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="">Select Type</option>
+                                            <option value="complain">4-6pm</option>
+                                            <option value="Feedback">7-9pm</option>
+                                            <option value="GInquiry"> 10-12pm</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">SUBMIT</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+        </div>
+        </div>
+
+
+    </header>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{url_for('static', filename='DoctorStrange2_banner.jpg')}}" class="d-block w-100"
+                    alt="..." />
+                <!-- <img src="./DoctorStrange2_banner.jpg" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static', filename='GhabranaNahiHai_banner.jpg')}}" class="d-block w-100"
+                    alt="..." />
+                <!-- <img src="./GhabranaNahiHai_banner.jpg" class="d-block w-100" alt="..."> -->
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static', filename='TopGunMaveRick_banner.jpg')}}" class="d-block w-100"
+                    alt="..." />
+                <!-- <img src="./TopGunMaveRick_banner.jpg" class="d-block w-100" alt="..."> -->
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container marketing ">
+        <h1>SERVICES</h1>
+        <!-- Three columns of text below the carousel -->
+        <div class="row fd">
+            <div class="col-lg-4">
+                <img src="{{url_for('static', filename='download.jpg')}}" />
+                <!-- <img src="./download.jpg" alt=""> -->
+                </svg>
+
+                <h2 class="fw-normal">2D ACTION</h2>
+                <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+                    first column.</p>
+                <button type="button" class="btn btn-danger class= " btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#viewdetailsModal">View details</button>
+            </div><!-- /.col-lg-4 -->
+
+            <div class="col-lg-4">
+                <img src="{{url_for('static', filename='images (2).jpg')}}" />
+                <!-- <img src="./images (2).jpg" alt=""> -->
+                <h2 class="fw-normal">3D ACTION</h2>
+                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                    column.</p>
+                <button type="button" class="btn btn-danger class= " btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#viewdetails2Modal">View details</button>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="{{url_for('static', filename='download (1).jpg')}}" />
+                <!-- <img src="./download (1).jpg" alt=""> -->
+                <h2 class="fw-normal">4D ACTION</h2>
+                <p>And lastly this, the third column of representative placeholder content.</p>
+                <button type="button" class="btn btn-danger class= " btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#viewdetails3Modal">View details</button>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="viewdetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="viewdetailsModalLabel">Details of 2D</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p>2D: This is an experience that the majority of people are familiar with. It refers to a
+                        “conventional movie
+                        experience”, meaning watching a film on a screen such as your home television or on a large
+                        screen at the
+                        movie theatre. The experience is simply two-dimensional.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Modal 3d -->
+    <div class="modal fade" id="viewdetails2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="viewdetails2ModalLabel">Details of 3D</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p>3D films are motion pictures made to give an illusion of three-dimensional solidity, usually with
+                        the help
+                        of special glasses worn by viewers. They have existed in some form since 1915, but had been
+                        largely
+                        relegated to a niche in the motion picture industry because of the costly hardware and processes
+                        required to
+                        produce and display a 3D film, and the lack of a standardized format for all segments of the
+                        entertainment
+                        business.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Modal 4d -->
+    <div class="modal fade" id="viewdetails3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="viewdetails3ModalLabel">Details of 4D</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p>4DX is a state-of-the-art film technology developed by CJ 4DPLEX which delivers an immersive
+                        multi-sensory
+                        cinematic experience. 4DX incorporates on-screen visuals with synchronized motion seats and
+                        environmental
+                        effects such as water, wind, fog, scent, snow and more, to enhance the action on screen.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- .................................................................... -->
+    <div class="container blogs">
+        <h1>Cineplax Experience</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (2).jpg')}}" />
+                    <!-- <img src="./download (2).jpg" alt=""> -->
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (3).jpg')}}" />
+                    <!-- <img src="./download (3).jpg" alt=""> -->
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (4).jpg')}}" />
+                    <!-- <img src="./download (4).jpg" alt=""> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row blogs-1">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (5).jpg')}}" />
+                    <!-- <img src="./download (5).jpg" alt=""> -->
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (6).jpg')}}" />
+                    <!-- <img src="./download (6).jpg" alt=""> -->
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{url_for('static', filename='download (7).jpg')}}" />
+                    <!-- <img src="./download (7).jpg" alt=""> -->
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <div class="container hollywood justify-content-center">
+        <h1>Hollywood</h1>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (9).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./download (9).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">Star treek</h2>
+                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
+                            George Lucas,
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">No. of seasons: 3</li>
+                        <li class="list-group-item">Opening theme: "Theme "</li>
+                        <li class="list-group-item">Followed by: Star Trek: The Animated Series</li>
+                    </ul>
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (9).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./download (9).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">Star treek</h2>
+                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
+                            George Lucas,
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">No. of seasons: 3</li>
+                        <li class="list-group-item">Opening theme: "Theme "</li>
+                        <li class="list-group-item">Followed by: Star Trek: The Animated Series</li>
+                    </ul>
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (8).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./download (8).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">Dark night</h2>
+                        <p class="card-text">After Gordon, Dent and Batman begin an assault on Gotham's organised crime,
+                            the mobs
+                            hire the Joker, a psychopathic criminal mastermind who offers to kill Batman and bring the
+                            city to its
+                            knees.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Director: Christopher Nolan</li>
+                        <li class="list-group-item">Box office: 1.006 billion USD</li>
+                        <li class="list-group-item">Budget: $185 million</li>
+                    </ul>
+
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="container bollywood justify-content-center">
+        <h1>Bollywood</h1>
+        <div class="row holl">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (11).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./download (11).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">2 stats</h2>
+                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
+                            George Lucas,
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Run time: 02hr 06 min</li>
+                        <li class="list-group-item"> Created by George Lucas</li>
+                        <li class="list-group-item">Owner: Lucasfilm Ltd.</li>
+                    </ul>
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (12).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./download (12).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">Dilwale</h2>
+                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
+                            George Lucas,
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">No. of seasons: 3</li>
+                        <li class="list-group-item">Opening theme: "Theme "</li>
+                        <li class="list-group-item">Followed by: Star Trek: The Animated Series</li>
+                    </ul>
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='images (1).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./images (1).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">Rock star</h2>
+                        <p class="card-text">After Gordon, Dent and Batman begin an assault on Gotham's the NKSNknaknsk
+                            NSLKndkNASKa
+                            snjanjsna ,s, d,adnsmndmsnmdn ,</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Director: Christopher Nolan</li>
+                        <li class="list-group-item">Box office: 1.006 billion USD</li>
+                        <li class="list-group-item">Budget: $185 million</li>
+                    </ul>
+
+                    <li>
+                        <a class="btn btn-danger m-3" href="#">View details »</a>
+                    </li>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="container prices">
+
+        <h1>Prices</h1>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">2D</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$7<small class="text-muted fw-light"></small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>width and height (no thickness)</li>
+                            <li>drawn by hand on the computers.</li>
+                            <li> creating the sequence of frames.</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal"> BOOK NOW </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">3D</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light"></small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li> magical creatures jump off the screen. </li>
+                            <li>With 3-D glasses, explosions</li>
+                            <li>make you feel you're part experience</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal"> BOOK NOW </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-white bg-primary border-primary">
+                        <h4 class="my-0 fw-normal">4D</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light"></small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>motion pictures with physical effects</li>
+                            <li> enhance the action on screen.</li>
+                            <li>Help center access</li>
+                        </ul>
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal"> BOOK NOW </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="contact_us" class="container BBB ">
+        <h2> Contact us</h2>
+        <div class="row">
+
+            <div class="col-md-6 fom">
+                <label for="fname ">Name</label>
+                <input type="text" id="name" placeholder=" Enter your name">
+            </div>
+
+            <div class="col-md-6 fom">
+                <label for="fname ">Your email address</label>
+                <input type="text" id="name" placeholder=" Enter your Email address">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 fom">
+                <label for="fname ">Password</label>
+                <input type="text" id="name" placeholder="  Enter your Password">
+            </div>
+            <div class="col-md-6 fom">
+                <label for="fname ">Additional message</label>
+                <input type="text" id="name" placeholder="  message">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 fom">
+                <label for="fname ">Contact</label>
+                <input type="text" id="name" placeholder="Contact number">
+            </div>
+
+
+            <div class="col-md-6 fom">
+                <div class="input-block-level">
+                    <div class="input-large span2 ">Type:</div>
+                    <select name="type" class="input-prepend" id="type" style="width:80%">
+                        <option value="">Select Type</option>
+                        <option value="complain">Complaint</option>
+                        <option value="Feedback">Feedback</option>
+                        <option value="GInquiry">General Inquiry</option>
+                        <option value="GI-PS">Corporate Inquiry / Private Screening</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-12 btnnn">
+        <button type="button" class="btn btn-dark">SUBMIT</button>
+
+    </div>
+
+
+    <footer>
+        <div class="container fott">
+            <div class="row">
+
+                <div class="col-lg-5 me-auto col-12">
+                    <h5 class="mb-lg-4 mb-3 m-4">Opening Hours</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex">
+                            Sunday : Closed
+                        </li>
+
+                        <li class="list-group-item d-flex">
+                            Monday, Tuesday - Firday
+                            <span>8:00 AM - 3:30 PM</span>
+                        </li>
+
+                        <li class="list-group-item d-flex">
+                            Saturday
+                            <span>10:30 AM - 5:30 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                    <h5 class="mb-lg-4 mb-3 m-4">Our Cinema</h5>
+
+                    <p><a href="mailto:hello@company.co">Address</ADdress></a></p>
+                    <p>
+
+                    </p>
+                    <p>Address:
+                        Atrium Cinemas, 3rd Floor, Atrium Mall,
+                        249 Staff Lines, Zaibunnisa Street, Saddar, Karachi
+
+
+
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                    <h5 class="mb-lg-4 mb-3 m-4">Socials media</h5>
+
+                    <ul class="social-icon">
+                        <li class="ff"><a href="#" class="fa fa-facebook"></a></li>
+
+                        <li class="ff"><a href="#" class="fa fa-twitter"></a></li>
+
+                        <li class="ff"><a href="#" class="fa fa-instagram"></a></li>
+
+                        <li class="ff"><a href="#" class="fa fa-youtube"></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+
+                    <br><br>Design: <a href="https://templatemo.com" target="_parent">Ikrash Chohan</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+
+</html>
