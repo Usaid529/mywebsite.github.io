@@ -575,6 +575,88 @@
             </div>
 
 
+
+
+            <div class="modal fade" id="booknowModal_rockstar" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div id="BookNow" class="modal-header">
+                            <h3 class="modal-title" id="booknowModalLabel">BOOKING FORM</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Rock Star</label>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Date</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="">Select Date</option>
+                                            <option value="complain">25-01-2022</option>
+                                            <option value="Feedback">27-01-2022</option>
+                                            <option value="GInquiry"> 29-01-2022</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Type:</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="">Select Type</option>
+                                            <option value="complain">2D</option>
+                                            <option value="Feedback">3D</option>
+                                            <option value="GInquiry"> 4D</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Time slot</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="">Select Time Slot</option>
+                                            <option value="complain">4-6pm</option>
+                                            <option value="Feedback">7-9pm</option>
+                                            <option value="GInquiry"> 10-12pm</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Seats</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="">Select No of Seats</option>
+                                            <option value="complain">1</option>
+                                            <option value="Feedback">2</option>
+                                            <option value="GInquiry"> 3</option>
+                                            <option value="Feedback">4</option>
+                                            <option value="GInquiry"> 5</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
                     <img src="{{url_for('static', filename='images (1).jpg')}}" class="card-img-top" alt="..." />
@@ -593,7 +675,7 @@
 
                     <li>
                         <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#booknowModal"> BOOK NOW </button>
+                            data-bs-target="#booknowModal_rockstar"> BOOK NOW </button>
                         <a class="btn btn-danger m-3" href="#">View details »</a>
                     </li>
                 </div>
