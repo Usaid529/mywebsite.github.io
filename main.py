@@ -105,40 +105,36 @@ def register():
 # http://localhost:5000/pythinlogin/home - this will be the home page, only accessible for loggedin users
 @app.route('/pythonlogin/home', methods=['GET', 'POST'])
 def home():
-    print('____________________________________________________________________________________________________________________________')
-    print(session['loggedin'])
+    msg=''
 
     # Check if user is loggedin
     if 'loggedin' in session:
         # User is loggedin show them the home page
-        if request.method == 'POST' and 'movei_name' in request.form and 'date' in request.form and 'type' in request.form and 'time' in request.form and 'seats' in request.form:
-            print('____oh yaaa________________________________________________________________________________________________________________________')
-            # movei_name = request.form['movie_name']
-            name = request.form['movei_name']
-            date = request.form['date']
-            date = date.split('-')
-            date = datetime.datetime(int(date[0]), int(date[1]), int(date[2]))
+        if request.method == 'POST' and 'name' in request.form and 'date' in request.form and 'type' in request.form and 'time' in request.form and 'seats' in request.form:
+            
+            name = request.form['name']
+            date = request.form['date']            
             type = request.form['type']
-            time = request.form['time']
-            start_time = time.split("-")[0] + ':00:00'
-            end_time = time.split("-")[1].split("p")[0] + ':00:00'
+            time = request.form['time']            
             seats = request.form['seats']
 
+            if name=='xxx' or date=='xxx' or type=='xxx' or time=='xxx' or seats=='xxx':
+                return redirect(url_for('home'))
 
-            # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            # cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
-            # account = cursor.fetchone()
-
+            date = date.split('-')
+            date = datetime.datetime(int(date[2]), int(date[1]), int(date[0]))
+            start_time = time.split("-")[0] + ':00:00'
+            end_time = time.split("-")[1].split("p")[0] + ':00:00'
 
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             sql = 'INSERT INTO tickets VALUES (NULL, %s, %s, %s, %s, %s, %s, %s)'
             values =  (session['id'], name, date, type, start_time, end_time, int(seats),)
             cursor.execute(sql, values)
             mysql.connection.commit()
-            msg = 'Ticket Booked Successfully!!'
-    # elif request.method == 'POST':
-    #     # Form is empty... (no POST data)
-    #     msg = 'Please fill out complete form!'
+            # msg = 'Ticket Booked Successfully!!'
+        # elif request.method == 'POST':
+            # Form is empty... (no POST data)
+            # msg = 'Please fill out complete form!'
     return render_template('home.html')
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users

@@ -589,21 +589,24 @@
                         </div>
                         <div class="modal-body">
                             <form action="{{ url_for('home') }}" method="POST">
-                                <div class="mb-3">
-                                    <!-- <label name="movei_name" for="exampleInputEmail1" class="form-label">Rock
-                                        Star</label> -->
-                                    <select name="movei_name" class="input-prepend" id="type" style="width:80%">
-                                        <option value="">Rock Star</option>
-                                    </select>
+                                <label>Please fill the form carefully!!!</label>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Movie</div>
+                                        <select name="name" class="input-prepend" id="type" style="width:80%">
+                                            <option>Rock Star</option>
+                                        </select>
+                                    </div>
                                 </div>
+
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Date</div>
                                         <select name="date" class="input-prepend" id="type" style="width:80%">
-                                            <option>Select Date</option>
-                                            <option>August 10 2017</option>
-                                            <option>August 10 2017</option>
-                                            <option>2022-5-5</option>
+                                            <option value="xxx">Select Date</option>
+                                            <option>5-5-2022</option>
+                                            <option>5-5-2022</option>
+                                            <option>5-5-2022</option>
 
                                         </select>
                                     </div>
@@ -613,7 +616,7 @@
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Type:</div>
                                         <select name="type" class="input-prepend" id="type" style="width:80%">
-                                            <option>Select Type</option>
+                                            <option value="xxx">Select Type</option>
                                             <option>2D</option>
                                             <option>3D</option>
                                             <option>4D</option>
@@ -621,33 +624,37 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Time slot</div>
                                         <select name="time" class="input-prepend" id="type" style="width:80%">
-                                            <option value="">Select Time Slot</option>
+                                            <option value="xxx">Select Time Slot</option>
                                             <option>4-6pm</option>
                                             <option>7-9pm</option>
                                             <option> 10-12pm</option>
-
                                         </select>
                                     </div>
                                 </div>
+
+
+
+
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Seats</div>
-                                        <select name="seats" class="input-prepend" id="type" style="width:80%">
-                                            <option>Select No of Seats</option>
+                                        <select name="seats" required class="input-prepend" id="type" style="width:80%">
+                                            <option value="xxx">Select No of Seats</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option> 3</option>
                                             <option>4</option>
                                             <option> 5</option>
                                         </select>
+                                        <h3>{{ msg }}</h3>
                                     </div>
                                 </div>
                                 <input type="submit" name="Submit" class="btn btn-primary">
-                                <!-- <button type="submit" class="btn btn-primary">SUBMIT</button> -->
                             </form>
                         </div>
 
