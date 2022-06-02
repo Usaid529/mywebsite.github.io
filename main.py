@@ -131,10 +131,19 @@ def home():
             values =  (session['id'], name, date, type, start_time, end_time, int(seats),)
             cursor.execute(sql, values)
             mysql.connection.commit()
-            # msg = 'Ticket Booked Successfully!!'
-        # elif request.method == 'POST':
-            # Form is empty... (no POST data)
-            # msg = 'Please fill out complete form!'
+
+        elif request.method == 'POST' and 'contact_type' in request.form and 'contact_message' in request.form:
+            contact_type = request.form['contact_type']
+            contact_message = request.form['contact_message']
+
+            if contact_type=='xxx':
+                return redirect(url_for('home'))           
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            sql = 'INSERT INTO reviews VALUES (NULL, %s, %s, %s)'
+            values =  (session['id'], contact_type, contact_message, )
+            cursor.execute(sql, values)
+            mysql.connection.commit()
     return render_template('home.html')
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
