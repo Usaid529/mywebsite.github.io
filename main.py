@@ -1,8 +1,12 @@
 # https://codeshack.io/login-system-python-flask-mysql/
+# from crypt import methods
+from datetime import date
+from time import time
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
+import datetime
 
 
 
@@ -43,7 +47,8 @@ def login():
             session['id'] = account['id']
             session['username'] = account['username']
             # Redirect to home page
-            return render_template('home.html', username=session['username'])
+            return redirect(url_for('home'))
+            # return render_template('home.html', username=session['username'])
         else:
             # Account doesnt exist or username/password incorrect
             msg = f'Incorrect username/password!'
@@ -98,14 +103,43 @@ def register():
 
 
 # http://localhost:5000/pythinlogin/home - this will be the home page, only accessible for loggedin users
-@app.route('/pythonlogin/home')
+@app.route('/pythonlogin/home', methods=['GET', 'POST'])
 def home():
+    print('____________________________________________________________________________________________________________________________')
+    print(session['loggedin'])
+
     # Check if user is loggedin
     if 'loggedin' in session:
         # User is loggedin show them the home page
-        return render_template('home.html', username=session['username'])
-    # User is not loggedin redirect to login page
-    return redirect(url_for('login'))
+        if request.method == 'POST' and 'movei_name' in request.form and 'date' in request.form and 'type' in request.form and 'time' in request.form and 'seats' in request.form:
+            print('____oh yaaa________________________________________________________________________________________________________________________')
+            # movei_name = request.form['movie_name']
+            name = request.form['movei_name']
+            date = request.form['date']
+            date = date.split('-')
+            date = datetime.datetime(int(date[0]), int(date[1]), int(date[2]))
+            type = request.form['type']
+            time = request.form['time']
+            start_time = time.split("-")[0] + ':00:00'
+            end_time = time.split("-")[1].split("p")[0] + ':00:00'
+            seats = request.form['seats']
+
+
+            # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            # cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
+            # account = cursor.fetchone()
+
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            sql = 'INSERT INTO tickets VALUES (NULL, %s, %s, %s, %s, %s, %s, %s)'
+            values =  (session['id'], name, date, type, start_time, end_time, int(seats),)
+            cursor.execute(sql, values)
+            mysql.connection.commit()
+            msg = 'Ticket Booked Successfully!!'
+    # elif request.method == 'POST':
+    #     # Form is empty... (no POST data)
+    #     msg = 'Please fill out complete form!'
+    return render_template('home.html')
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
 @app.route('/pythonlogin/profile')

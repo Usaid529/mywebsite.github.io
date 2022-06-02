@@ -17,6 +17,7 @@
 </style>
 
 <body>
+    <!-- <h1>welcome back {{ username }}</h1> -->
     <header>
         <div class="container">
             <div class="row py-2">
@@ -579,6 +580,7 @@
 
             <div class="modal fade" id="booknowModal_rockstar" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
+
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div id="BookNow" class="modal-header">
@@ -586,33 +588,35 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="{{ url_for('home') }}" method="POST">
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Rock Star</label>
+                                    <!-- <label name="movei_name" for="exampleInputEmail1" class="form-label">Rock
+                                        Star</label> -->
+                                    <select name="movei_name" class="input-prepend" id="type" style="width:80%">
+                                        <option value="">Rock Star</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Date</div>
-                                        <select name="type" class="input-prepend" id="type" style="width:80%">
-                                            <option value="">Select Date</option>
-                                            <option value="complain">25-01-2022</option>
-                                            <option value="Feedback">27-01-2022</option>
-                                            <option value="GInquiry"> 29-01-2022</option>
+                                        <select name="date" class="input-prepend" id="type" style="width:80%">
+                                            <option>Select Date</option>
+                                            <option>August 10 2017</option>
+                                            <option>August 10 2017</option>
+                                            <option>2022-5-5</option>
 
                                         </select>
                                     </div>
                                 </div>
 
-
-
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Type:</div>
                                         <select name="type" class="input-prepend" id="type" style="width:80%">
-                                            <option value="">Select Type</option>
-                                            <option value="complain">2D</option>
-                                            <option value="Feedback">3D</option>
-                                            <option value="GInquiry"> 4D</option>
+                                            <option>Select Type</option>
+                                            <option>2D</option>
+                                            <option>3D</option>
+                                            <option>4D</option>
 
                                         </select>
                                     </div>
@@ -620,11 +624,11 @@
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Time slot</div>
-                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                        <select name="time" class="input-prepend" id="type" style="width:80%">
                                             <option value="">Select Time Slot</option>
-                                            <option value="complain">4-6pm</option>
-                                            <option value="Feedback">7-9pm</option>
-                                            <option value="GInquiry"> 10-12pm</option>
+                                            <option>4-6pm</option>
+                                            <option>7-9pm</option>
+                                            <option> 10-12pm</option>
 
                                         </select>
                                     </div>
@@ -632,29 +636,31 @@
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Seats</div>
-                                        <select name="type" class="input-prepend" id="type" style="width:80%">
-                                            <option value="">Select No of Seats</option>
-                                            <option value="complain">1</option>
-                                            <option value="Feedback">2</option>
-                                            <option value="GInquiry"> 3</option>
-                                            <option value="Feedback">4</option>
-                                            <option value="GInquiry"> 5</option>
-
-
+                                        <select name="seats" class="input-prepend" id="type" style="width:80%">
+                                            <option>Select No of Seats</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option> 3</option>
+                                            <option>4</option>
+                                            <option> 5</option>
                                         </select>
                                     </div>
                                 </div>
+                                <input type="submit" name="Submit" class="btn btn-primary">
+                                <!-- <button type="submit" class="btn btn-primary">SUBMIT</button> -->
+                            </form>
                         </div>
 
 
                     </div>
-                    <button type="submit" class="btn btn-primary">SUBMIT</button>
-                    </form>
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                 </div>
+
             </div>
 
             <div class="col-md-4">
