@@ -5,22 +5,6 @@
 {% block content %}
 <h2>Profile Page</h2>
 <div>
-    <!-- <p>Your account details are below:</p>
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td>{{ account['username'] }}</td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td>{{ account['password'] }}</td>
-        </tr>
-        <tr>
-            <td>Email:</td>
-            <td>{{ account['email'] }}</td>
-        </tr>
-    </table>
-</div> -->
 
     Username: {{ account['username'] }}
     <br>
@@ -29,41 +13,41 @@
     Email: {{ account['email'] }}
     <br>
     <br>
-    Ticket history:
+    <h3>Ticket History:</h3>
     <br>
     <table>
         <tr>
-            <th>Movie</th>
-            <th>Date</th>
-            <th>Type</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Seats Booked</th>
+            <th style="padding:0 15px 0 15px;">Movie</th>
+            <th style="padding:0 15px 0 15px;">Date</th>
+            <th style="padding:0 15px 0 15px;">Type</th>
+            <th style="padding:0 15px 0 15px;">Start Time</th>
+            <th style="padding:0 15px 0 15px;">End Time</th>
+            <th style="padding:0 15px 0 15px;">Seats Booked</th>
         </tr>
         {% for ticket in tickets %}
         <tr>
-            <td>{{ ticket['movei_name'] }}</td>
-            <td>{{ ticket['ticket_date'] }}</td>
-            <td>{{ ticket['ticket_type'] }}</td>
-            <td>{{ ticket['start_time'] }}</td>
-            <td>{{ ticket['end_time'] }}</td>
-            <td>{{ ticket['seats'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['movei_name'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['ticket_date'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['ticket_type'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['start_time'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['end_time'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ ticket['seats'] }}</td>
         </tr>
         {% endfor %}
     </table>
 
-
-    your review:
+    <br><br>
+    <h3>Your Review:</h3>
     <br>
     <table>
         <tr>
-            <th>Type</th>
-            <th>review</th>
+            <th style="padding:0 15px 0 15px;">Type</th>
+            <th style="padding:0 15px 0 15px;">review</th>
         </tr>
         {% for review in reviews %}
         <tr>
-            <td>{{ review['review_type'] }}</td>
-            <td>{{ review['message'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ review['review_type'] }}</td>
+            <td style="padding:0 15px 0 15px;">{{ review['message'] }}</td>
         </tr>
         {% endfor %}
     </table>
