@@ -49,9 +49,7 @@ def login():
             # Redirect to home page
             return redirect(url_for('home'))
             # return render_template('home.html', username=session['username'])
-        else:
-            # Account doesnt exist or username/password incorrect
-            msg = f'Incorrect username/password!'
+
     # Show the login form with message (if any)
     return render_template('index.html', msg=msg)
     
@@ -144,6 +142,8 @@ def home():
             values =  (session['id'], contact_type, contact_message, )
             cursor.execute(sql, values)
             mysql.connection.commit()
+        
+        
     return render_template('home.html')
 
 # http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
