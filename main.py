@@ -49,6 +49,9 @@ def login():
             # Redirect to home page
             return redirect(url_for('home'))
             # return render_template('home.html', username=session['username'])
+        else:
+            # Account doesnt exist or username/password incorrect
+            msg = f'Incorrect username/password!'
 
     # Show the login form with message (if any)
     return render_template('index.html', msg=msg)
@@ -155,8 +158,17 @@ def profile():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
         account = cursor.fetchone()
+        
+        cursor.execute('SELECT * FROM tickets WHERE person_id = %s', (session['id'],))
+        tickets = cursor.fetchall()
+
+        cursor.execute('SELECT * FROM reviews WHERE person_id = %s', (session['id'],))
+        reviews = cursor.fetchall()
+        
+
+
         # Show the profile page with account info
-        return render_template('profile.html', account=account)
+        return render_template('profile.html', account=account, tickets=tickets, reviews=reviews)
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 

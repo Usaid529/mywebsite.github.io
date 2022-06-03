@@ -16,6 +16,13 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Prompt:wght@500&family=Roboto+Slab:wght@300&family=Tiro+Devanagari+Marathi&display=swap');
 </style>
 
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
 <body>
     <!-- <h1>welcome back {{ username }}</h1> -->
     <header>
@@ -28,10 +35,9 @@
                         <!-- <h1>CINEPLEX CINEMA</h1> -->
                     </div>
                     <nav class="nav  nav-pills ">
-                        <a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
-                        <li class="nav-item"><a href="#top" class="nav-link active">Home</a></li>
+                        <!-- <li class="nav-item"><a href="#top" class="nav-link active">Home</a></li> -->
                         <li class="nav-item"><a href="#top" class="nav-link">About</a> </li>
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 SERVICES
@@ -42,8 +48,8 @@
                                 <li><a class="dropdown-item" href="#">3D Action</a></li>
                                 <li><a class="dropdown-item" href="#">4D Action</a></li>
                             </ul>
-                        </div>
-                        <div class="dropdown">
+                        </div> -->
+                        <!-- <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 MOVIES
@@ -54,15 +60,13 @@
                                 <li><a class="dropdown-item" href="#">LOLLYWOOD</a></li>
                                 <li><a class="dropdown-item" href="#">TOLLYWOOD</a></li>
                             </ul>
-                        </div>
+                        </div> -->
 
 
                         <li class="nav-item"><a href="#portfolio" class="nav-link">Cinema</a></li>
                         <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                         <!-- <input type="button" onClick="document.getElementById('middle').scrollIntoView();" /> -->
-                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#booknowModal"> BOOK NOW </button>
-                        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                        <li class="nav-item"><a href="#portfolio" class="nav-link">Cinema</a></li>
                         <!-- <button type="button" class="btn btn-danger class= " btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#signupModal">LOGIN</button> -->
                     </nav>
@@ -1285,3 +1289,5 @@
 
 
 </html>
+
+{% endblock %}
