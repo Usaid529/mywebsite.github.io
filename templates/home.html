@@ -523,63 +523,9 @@
     <div class="container bollywood justify-content-center">
         <h1>Bollywood</h1>
         <div class="row holl">
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{url_for('static', filename='download (11).jpg')}}" class="card-img-top" alt="..." />
-                    <!-- <img src="./download (11).jpg" class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h2 class="card-title">2 stats</h2>
-                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
-                            George Lucas,
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Run time: 02hr 06 min</li>
-                        <li class="list-group-item"> Created by George Lucas</li>
-                        <li class="list-group-item">Owner: Lucasfilm Ltd.</li>
-                    </ul>
-                    <li>
-                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#booknowModal"> BOOK NOW </button>
-                        <a class="btn btn-danger m-3" href="#">View details »</a>
-                    </li>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{url_for('static', filename='download (12).jpg')}}" class="card-img-top" alt="..." />
-                    <!-- <img src="./download (12).jpg" class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h2 class="card-title">Dilwale</h2>
-                        <p class="card-text">Star Wars is an American epic space-opera multimedia franchise created by
-                            George Lucas,
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">No. of seasons: 3</li>
-                        <li class="list-group-item">Opening theme: "Theme "</li>
-                        <li class="list-group-item">Followed by: Star Trek: The Animated Series</li>
-                    </ul>
-                    <li>
-                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#booknowModal"> BOOK NOW </button>
-                        <a class="btn btn-danger m-3" href="#">View details »</a>
-                    </li>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-            </div>
-
-
-
-
             <div class="modal fade" id="booknowModal_rockstar" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
+
 
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -594,7 +540,7 @@
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Movie</div>
                                         <select name="name" class="input-prepend" id="type" style="width:80%">
-                                            <option>Rock Star</option>
+                                            <option>2 fgdffdgSTATES</option>
                                         </select>
                                     </div>
                                 </div>
@@ -604,9 +550,9 @@
                                         <div class="input-large span2 ">Date</div>
                                         <select name="date" class="input-prepend" id="type" style="width:80%">
                                             <option value="xxx">Select Date</option>
-                                            <option>5-5-2022</option>
-                                            <option>5-5-2022</option>
-                                            <option>5-5-2022</option>
+                                            <option>5-5-20222222</option>
+                                            <option>7-5-2022</option>
+                                            <option>9-5-2022</option>
 
                                         </select>
                                     </div>
@@ -636,10 +582,113 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Seats</div>
+                                        <select name="seats" required class="input-prepend" id="type" style="width:80%">
+                                            <option value="xxx">Select No of Seats</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                        <h3>{{ msg }}</h3>
+                                    </div>
+                                </div>
+                                <input type="submit" name="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
 
 
+                    </div>
 
 
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='download (11).jpg')}}" class="card-img-top" alt="..." />
+                    <!-- <img src="./images (1).jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h2 class="card-title">2 STATES</h2>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Director: Abhishek Verman</li>
+                        <li class="list-group-item">Box office: 1.006 billion USD</li>
+                        <li class="list-group-item">Budget: $185 million</li>
+                        <li class="list-group-item">Ticket Price: 2000 rs</li>
+                    </ul>
+
+                    <li>
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal_rockstar"> BOOK NOW </button>
+                        <!-- <a class="btn btn-danger m-3" href="#">View details »</a> -->
+                    </li>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="booknowModal_rockstar_2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div id="BookNow" class="modal-header">
+                            <h3 class="modal-title" id="booknowModalLabel">BOOKING FORM</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ url_for('home') }}" method="POST">
+                                <label>Please fill the form carefully!!! {{ msg }}</label>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Movie</div>
+                                        <select name="name" class="input-prepend" id="type" style="width:80%">
+                                            <option>DILWALE</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Date</div>
+                                        <select name="date" class="input-prepend" id="type" style="width:80%">
+                                            <option value="xxx">Select Date</option>
+                                            <option>5-5-2022</option>
+                                            <option>7-5-2022</option>
+                                            <option>9-5-2022</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Type:</div>
+                                        <select name="type" class="input-prepend" id="type" style="width:80%">
+                                            <option value="xxx">Select Type</option>
+                                            <option>2D</option>
+                                            <option>3D</option>
+                                            <option>4D</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Time slot</div>
+                                        <select name="time" class="input-prepend" id="type" style="width:80%">
+                                            <option value="xxx">Select Time Slot</option>
+                                            <option>4-6pm</option>
+                                            <option>7-9pm</option>
+                                            <option> 10-12pm</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="col-md-6 ">
                                     <div class="input-block-level">
                                         <div class="input-large span2 ">Seats</div>
@@ -663,22 +712,18 @@
 
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-                </div>
 
             </div>
 
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{url_for('static', filename='images (1).jpg')}}" class="card-img-top" alt="..." />
+                    <img src="{{url_for('static', filename='download (12).jpg')}}" class="card-img-top" alt="..." />
                     <!-- <img src="./images (1).jpg" class="card-img-top" alt="..."> -->
                     <div class="card-body">
-                        <h2 class="card-title">Rock star</h2>
+                        <h2 class="card-title">DILWALE</h2>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Director: Christopher Nolan</li>
+                        <li class="list-group-item">Director: Rohit Shetty</li>
                         <li class="list-group-item">Box office: 1.006 billion USD</li>
                         <li class="list-group-item">Budget: $185 million</li>
                         <li class="list-group-item">Ticket Price: 2000 rs</li>
@@ -686,8 +731,112 @@
 
                     <li>
                         <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#booknowModal_rockstar"> BOOK NOW </button>
+                            data-bs-target="#booknowModal_rockstar_2"> BOOK NOW </button>
                         <!-- <a class="btn btn-danger m-3" href="#">View details »</a> -->
+                    </li>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="booknowModal_rockstar_3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">BOOKING FORM !!!</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ url_for('home') }}" method="POST">
+                                <label>Please fill the form carefully!!! lalala</label>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Movie</div>
+                                        <select name="name1" class="input-prepend" style="width:80%">
+                                            <option>Rock Star</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Date</div>
+                                        <select name="date" class="input-prepend" style="width:80%">
+                                            <option value="xxx">Select Date</option>
+                                            <option>5-5-2022</option>
+                                            <option>7-5-2022</option>
+                                            <option>9-5-2022</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Type:</div>
+                                        <select name="type" class="input-prepend" style="width:80%">
+                                            <option value="xxx">Select Type</option>
+                                            <option>2D</option>
+                                            <option>3D</option>
+                                            <option>4D</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Time slot</div>
+                                        <select name="time" class="input-prepend" style="width:80%">
+                                            <option value="xxx">Select Time Slot</option>
+                                            <option>4-6pm</option>
+                                            <option>7-9pm</option>
+                                            <option> 10-12pm</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="input-block-level">
+                                        <div class="input-large span2 ">Seats</div>
+                                        <select name="seats" required class="input-prepend" style="width:80%">
+                                            <option value="xxx">Select No of Seats</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option> 3</option>
+                                            <option>4</option>
+                                            <option> 5</option>
+                                        </select>
+                                        <h3>{{ msg }}</h3>
+                                    </div>
+                                </div>
+                                <input type="submit" name="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <!-- <h1>hiii</h1> -->
+                <div class="card" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='images (1).jpg')}}" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h2 class="card-title">Rock star</h2>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Director: Imtiaz Ali</li>
+                        <li class="list-group-item">Box office: 1.006 billion USD</li>
+                        <li class="list-group-item">Budget: $185 million</li>
+                        <li class="list-group-item">Ticket Price: 2000 rs</li>
+                    </ul>
+
+                    <li>
+                        <button type="button" class="btn btn-warning class= " btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#booknowModal_rockstar_3"> BOOK NOW </button>
                     </li>
                 </div>
             </div>
